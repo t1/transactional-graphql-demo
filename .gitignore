@@ -2,3 +2,7 @@
 
 /.idea/
 *.iml
+
+/.graphqlconfig
+/schema.graphql
+/test-queries.graphql
