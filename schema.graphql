@@ -1,0 +1,26 @@
+"Mutation root"
+type Mutation {
+  bar(input: Int): String
+  combined(wrapper: MutationsInputInput): Mutations
+  foo(input: String): String
+}
+
+type Mutations {
+  bar: String
+  foo: String
+}
+
+"Query root"
+type Query {
+  foo: Result
+}
+
+type Result {
+  bar: String
+  foo: String
+}
+
+input MutationsInputInput {
+  bar: Int
+  foo: String
+}

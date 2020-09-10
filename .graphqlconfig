@@ -1,0 +1,13 @@
+{
+  "name": "Transactional GraphQL Demo",
+  "schemaPath": "schema.graphql",
+  "extensions": {
+    "endpoints": {
+      "local": {
+        "url": "http://localhost:8080/transactional-graphql/graphql",
+        "headers": {},
+        "introspect": false
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+query q {foo{foo bar}}
+
+mutation mut {
+    foo(input: "foooo")
+    bar(input: 1)
+}
+
+mutation comb {
+    combined(wrapper: {foo: "foooo", bar: 1}) {foo bar}
+}
