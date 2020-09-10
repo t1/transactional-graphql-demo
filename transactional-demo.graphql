@@ -2,9 +2,9 @@ query q {foo{foo bar}}
 
 mutation mut {
     foo(input: "foooo")
-    bar(input: 1)
+    bar(s: "bar", i: 1)
 }
 
 mutation comb {
-    combined(wrapper: {foo: "foooo", bar: 1}) {foo bar}
+    mutations(input: {foo: "foooo", barS: "bar", barI: 3}) {foo bar}
 }
