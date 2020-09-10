@@ -1,8 +1,8 @@
 "Mutation root"
 type Mutation {
-  bar(input: Int): String
-  combined(wrapper: MutationsInputInput): Mutations
+  bar(i: Int, s: String): String
   foo(input: String): String
+  mutations(input: MutationsInputInput): Mutations
 }
 
 type Mutations {
@@ -21,6 +21,7 @@ type Result {
 }
 
 input MutationsInputInput {
-  bar: Int
+  barI: Int
+  barS: String
   foo: String
 }

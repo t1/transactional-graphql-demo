@@ -21,17 +21,26 @@ public class GraphQlBoundary {
 
     @Mutation public String foo(String input) { return input + service.foo(); }
 
-    @Mutation public String bar(String input) { return input + service.foo(); }
+    @Mutation public String bar(String s, Integer i) { return s + "-" + i + service.foo(); }
 
 
-    @Mutation public MutationWrapper combined(MutationWrapper wrapper) {
-        if (wrapper.foo != null) wrapper.foo = "wrapped:" + foo(wrapper.foo);
-        if (wrapper.bar != null) wrapper.bar = "wrapped:" + bar(wrapper.bar);
-        return wrapper;
-    }
+    @Mutation public Mutations mutations(MutationsInput input) { return new Mutations().apply(input); }
 
-    public static class MutationWrapper {
+
+    public class Mutations {
         public String foo;
         public String bar;
+
+        public Mutations apply(MutationsInput input) {
+            if (input.foo != null) this.foo = foo(input.foo);
+            if (input.barS != null || input.barI != null) this.bar = bar(input.barS, input.barI);
+            return this;
+        }
+    }
+
+    public static class MutationsInput {
+        public String foo;
+        public String barS;
+        public Integer barI;
     }
 }
