@@ -1,7 +1,7 @@
 query q {foo{foo bar}}
 
 mutation mut {
-    foo(input: "foooo")
+    foo(input: "fooooö༄🤪")
     bar(s: "bar", i: 1)
 }
 
