@@ -18,6 +18,6 @@ class GraphQlClientTest {
 
         String foo = api.foo("glubbi-ö༄\uD83E\uDD2A");
 
-        then(foo).isEqualTo("glubbi-ö༄\uD83E\uDD2A");
+        then(foo).startsWith("glubbi-ö༄\uD83E\uDD2A");
     }
 }
